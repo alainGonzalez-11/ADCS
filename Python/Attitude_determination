@@ -1,0 +1,4 @@
+import numpy as np
+
+def static_attitude(a_i, v_i, s_i):
+    B = np.dot(np.multiply(a_i, s_i), v_i.T)
