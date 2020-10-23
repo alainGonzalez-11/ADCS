@@ -45,6 +45,13 @@ def get_dcm(angles, group, rad=False):
 
 
 def get_euler_angles(dcm, group, rad=False):
+    """
+    Creation of a Euler angles vector from a DDCM according to a group.
+    :param dcm: DCM of shape (3, 3).
+    :param group: String indicating the group used for the Euler angles. (3 digits).
+    :param rad: (optional) If true the angles must be given in radians, otherwise in degrees, default is false.
+    :return: Euler angles vector of shape (3, 1). Can be in radians or degrees according to the rad flag.
+    """
     if not (dcm.shape == (3,3)):
         print("Error. DCM's must be of shape (3, 3)")
         return -1
