@@ -1,6 +1,23 @@
 import numpy as np
 
 def static_attitude(a_i, v_i, s_i):
+    """Short summary.
+
+    Parameters
+    ----------
+    a_i : type
+        Description of parameter `a_i`.
+    v_i : type
+        Description of parameter `v_i`.
+    s_i : type
+        Description of parameter `s_i`.
+
+    Returns
+    -------
+    type
+        Description of returned object.
+
+    """
 
     B = np.dot(np.multiply(a_i, s_i), v_i.T)
     S = B + B.T

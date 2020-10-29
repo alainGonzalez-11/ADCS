@@ -1,11 +1,11 @@
 function [q] = Attitude_determination(a_i, v_i, s_i)
-%Attitude_determination Determination of CRP's applying QUEST method.
+%Attitude_determination Determination of CRPs applying QUEST method.
 %   Arguments:
 %   - a_i: Relative weights vector of size (n)
 %   - v_i: Reference unit vectors matrix of size (3, n)
 %   - s_i: Observed unit vectors matrix of size (3, n)
 %   Returns:
-%   - q: CRP's vector of size (3)
+%   - q: CRPs vector of size (3)
 %   Notes:
 %   - "n" is the number of observed vectors
     B = (a_i .* s_i) * v_i';
@@ -25,4 +25,3 @@ function [q] = Attitude_determination(a_i, v_i, s_i)
     end
     q = (inv((A + sigma) * eye(3) - S))* Z;
 end
-

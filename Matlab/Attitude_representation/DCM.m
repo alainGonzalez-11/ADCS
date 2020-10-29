@@ -1,22 +1,23 @@
 classdef DCM
-    %UNTITLED Summary of this class goes here
-    %   Detailed explanation goes here
+    %DCM Director Cosines Matrix Class
+    %   A class with the basic methods corresponding to the DCM.
     
     properties
-        Property1
     end
     
     methods (Static)
-        function rates = getRates(inputArg1,inputArg2)
-            %UNTITLED Construct an instance of this class
+        function rates = getRates(DCM, w)
+            %getRates Construct the rates matric from the DCM and the angular
+            %rates vector
             %   Detailed explanation goes here
-            rates.Property1 = inputArg1 + inputArg2;
+            w = CrossMatrix(w);
+            rates = -w * DCM;
         end
         
-        function outputArg = method1(obj,inputArg)
-            %METHOD1 Summary of this method goes here
-            %   Detailed explanation goes here
-            outputArg = obj.Property1 + inputArg;
+        function addition = method1(DCM1,DCM2)
+            %addition Addition of DCMs
+            %   AC = AB * BC
+            addition = DCM1 * DCM2;
         end
     end
 end
