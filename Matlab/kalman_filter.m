@@ -8,6 +8,9 @@ classdef kalman_filter < handle
       H_K
       w
       Q
+
+
+
       K
    end
    methods
