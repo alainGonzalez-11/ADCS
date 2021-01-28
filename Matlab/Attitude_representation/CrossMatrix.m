@@ -8,6 +8,6 @@ function [x] = CrossMatrix(vector)
 %   This matrix is also referred as the tilde matrix.
 x = [0 -vector(3) vector(2);
     vector(3) 0 -vector(1);
-    -vector(3) vector(1) 0];
+    -vector(2) vector(1) 0];
 end
 
